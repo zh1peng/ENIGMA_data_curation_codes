@@ -6,8 +6,11 @@
 2. requirements:
   
     a. it requires the **Freesurfer output** are stored in the following format:
+     
      directory2study/study_ID/derivatives/freesurfer/sub-1
+     
      directory2study/study_ID/derivatives/freesurfer/sub-2
+     
      This is not mandatory, but recommanded. You can change line 21,23 to fit other format.
   
     b. it requires Freesurfer and R installed
