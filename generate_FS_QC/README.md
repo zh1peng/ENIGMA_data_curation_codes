@@ -1,7 +1,9 @@
 # Functions used for generating FS_QC folder to do visual inspection
 
 ## How to use
-1. download generate_FS_QC and unzip
+1. download generate_FS_QC and unzip it.
+    
+    **ENIGMA_FS_QC_BIDS_version.m** is what you need to run.
 
 2. requirements:
   
