@@ -29,6 +29,8 @@ This is the example to wrap a tailored html txt for one record (row):
 2) we just want to send email to someone, but not want to include a specific article.
 3) we want to send a follow-up message to someone
 
+Need to change sender's name in the wrap_html_txt!
+
 ```R
 #(1)
  txt2send=wrap_html_txt(msg_type='new_with_info',
@@ -39,7 +41,7 @@ This is the example to wrap a tailored html txt for one record (row):
  txt2send=wrap_html_txt(msg_type='new_no_info',
                         author_name='Zhipeng')
  
- (3)
+ #(3)
  txt2send=wrap_html_txt(msg_type='follow-up',
                         author_name='Zhipeng')
 ```
