@@ -49,9 +49,12 @@ Need to change sender's name in the wrap_html_txt!
 # Step 5. Send out the email
 * send out email for each row in the record
   if it is a new record and keep==1, send the new outreach message
-  if it is an old record and keep==1, send the follow up message with the thread_id (follow up email will be in same thread) if the current_date-last_sent_date<duration2fu
+  
+  if it is an old record and keep==1, send the follow up message with the thread_id (follow up email will be in same thread) if the current_date>full_sent_date
   if keep==0 ignore this record 
+  
   if site said no, need to update keep=0, so that they will not receive the email in the future.
+  
 * update the record
 
 ```R
