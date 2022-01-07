@@ -22,7 +22,7 @@ This is the example to wrap a tailored html txt for one record (row):
 2) we just want to send email to someone, but not want to include a specific article.
 3) we want to send a follow-up message to someone
 
-```
+```R
 #(1)
  txt2send=wrap_html_txt(msg_type='new_with_info',
                         author_name='Zhipeng',
@@ -40,10 +40,10 @@ This is the example to wrap a tailored html txt for one record (row):
 # Step 5. Send out the email
 * send out email for each row in the record
   if it is a new record and keep==1, send the new outreach message
-  if it is an old record and keep==1, send the follow up message with the thread_id (follow up email will be in same thread) if the current_date-last_sent_date<threshold
+  if it is an old record and keep==1, send the follow up message with the thread_id (follow up email will be in same thread) if the current_date-last_sent_date<duration2fu
 * update the record
 
-```
+```R
 databasefile='somedir/outreach_email_code/sample_outreach_database.csv'
 emailbase='somerandommail@gmail.com;somerandom@gmail'
 duration2fu=20
