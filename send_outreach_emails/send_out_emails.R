@@ -167,7 +167,7 @@ for (rowi in c(1:nrow(df))){
     df[rowi, 'follow_up_date']=as.character(today.date+ddays(duration2fu))}
 }
 
-write.csv(df, 'somedir/outreach_email_code/outreach_database_checked_sent1.csv',row.names = FALSE)
+write.csv(df, 'somedir/outreach_email_code/sample_outreach_database_updated.csv',row.names = FALSE)
 
 
 
