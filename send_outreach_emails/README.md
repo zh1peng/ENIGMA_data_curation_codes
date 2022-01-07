@@ -3,7 +3,7 @@
 ## Step 1. Setup google account app auth and download the auth file
 It is a json file needed gmailr to interact with the Gmail account
 ```r
-path="somedir/client_secret_64u37h9pdvk.apps.googleusercontent.com.json"
+path="somedir/client_secret_some-codes.apps.googleusercontent.com.json"
 gm_auth_configure(path=path)
 gm_auth(cache=".secret")
 ```
