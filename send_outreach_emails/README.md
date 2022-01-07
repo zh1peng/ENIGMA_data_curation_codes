@@ -1,7 +1,12 @@
 # Automatically send out outreach emails as if it is sent manually
 
-## Step 1. Setup google account auth and download the auth file
-This is needed for gmailr to interact with the Gmail account
+## Step 1. Setup google account app auth and download the auth file
+It is a json file needed gmailr to interact with the Gmail account
+```r
+path="somedir/client_secret_64u37h9pdvk.apps.googleusercontent.com.json"
+gm_auth_configure(path=path)
+gm_auth(cache=".secret")
+```
 
 ## Step 2. Identify studies in web of science (may need to VPN to access WOS service)
 * search the keywords
