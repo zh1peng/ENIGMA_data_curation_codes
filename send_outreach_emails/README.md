@@ -7,12 +7,14 @@ This is needed for gmailr to interact with the Gmail account
 * search the keywords
 * review the search results and select the appropriate record
 * Add record to the list
-* download full record as csv file
+* download full record as csv file 
+* see sample wosrecord file
 
 ## Step 3. Organize and review WOS file
 * run `parse.wos` to organize the record
-* review the organized record to exclude already existing member or someone we sent data already 
+* review the organized record to exclude already existing member/lab or someone we sent message already 
 * put 0 in the "keep" column to indicate not to send the email
+* see sample outreach database file
 
 
 ## Step 4. Wrap a tailored text for the record
@@ -41,6 +43,8 @@ This is the example to wrap a tailored html txt for one record (row):
 * send out email for each row in the record
   if it is a new record and keep==1, send the new outreach message
   if it is an old record and keep==1, send the follow up message with the thread_id (follow up email will be in same thread) if the current_date-last_sent_date<duration2fu
+  if keep==0 ignore this record 
+  if site said no, need to update keep=0, so that they will not receive the email in the future.
 * update the record
 
 ```R
@@ -84,6 +88,8 @@ for (rowi in c(1:nrow(df))){
     df[rowi,'last_sent_date']=as.character(today.date)
     df[rowi, 'follow_up_date']=as.character(today.date+ddays(duration2fu))}
 }
+ 
+write.csv(df, 'somedir/outreach_email_code/sample_outreach_database_updated.csv',row.names = FALSE) 
 ```
 
 
