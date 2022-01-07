@@ -13,13 +13,13 @@ gm_auth(cache=".secret")
 * review the search results and select the appropriate record
 * Add record to the list
 * download full record as csv file 
-* see (sample wosrecord file)[https://github.com/zh1peng/ENIGMA_data_curation_codes/blob/main/send_outreach_emails/sample_wosrecord.xls]
+* see [sample wosrecord file](https://github.com/zh1peng/ENIGMA_data_curation_codes/blob/main/send_outreach_emails/sample_wosrecord.xls)
 
 ## Step 3. Organize and review WOS file
 * run `parse.wos` to organize the record
 * review the organized record to exclude already existing member/lab or someone we sent message already 
 * put 0 in the "keep" column to indicate not to send the email
-* see sample outreach database file
+* see [sample outreach database file](https://github.com/zh1peng/ENIGMA_data_curation_codes/blob/main/send_outreach_emails/sample_outreach_database.csv)
 
 
 ## Step 4. Wrap a tailored text for the record
