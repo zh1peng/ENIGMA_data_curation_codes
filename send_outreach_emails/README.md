@@ -13,7 +13,7 @@ gm_auth(cache=".secret")
 * review the search results and select the appropriate record
 * Add record to the list
 * download full record as csv file 
-* see sample wosrecord file
+* see (sample wosrecord file)[https://github.com/zh1peng/ENIGMA_data_curation_codes/blob/main/send_outreach_emails/sample_wosrecord.xls]
 
 ## Step 3. Organize and review WOS file
 * run `parse.wos` to organize the record
