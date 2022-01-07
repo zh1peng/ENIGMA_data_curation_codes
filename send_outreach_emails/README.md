@@ -11,8 +11,8 @@ gm_auth(cache=".secret")
 ## Step 2. Identify studies in web of science (may need to VPN to access WOS service)
 * search the keywords
 * review the search results and select the appropriate record
-* Add record to the list
-* download full record as csv file 
+* save record to the list
+* download full record as excel file 
 * see [sample wosrecord file](https://github.com/zh1peng/ENIGMA_data_curation_codes/blob/main/send_outreach_emails/sample_wosrecord.xls)
 
 ## Step 3. Organize and review WOS file
