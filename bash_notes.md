@@ -32,7 +32,8 @@ done
 
 ## remove file! that in/not in a list 
 ```
-# print it
+# print it  
+# use /* to get the folder 
 for f in *; do
     if ! grep -Fxq "$f" folders_list.txt; then
         printf "Folder to remove -- %s \n" ${f} 
@@ -51,7 +52,7 @@ for f in *; do
 
 ```
 
-
+[ref-get folder in dir](https://unix.stackexchange.com/questions/86722/how-do-i-loop-through-only-directories-in-bash)
 
 [ref](https://stackoverflow.com/questions/61845449/delete-files-and-folders-in-a-directory-which-dont-match-a-text-list)
 
