@@ -30,7 +30,7 @@ done
 ```
 
 
-## remove folder that in/not in a list 
+## remove file! that in/not in a list 
 ```
 # print it
 for f in *; do
