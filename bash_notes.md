@@ -30,10 +30,10 @@ done
 ```
 
 
-## remove file! that in/not in a list 
+## remove *file*! that in/not in a list 
 ```
 # print it  
-# use /* to get the folder 
+# use */ to get the folder 
 for f in *; do
     if ! grep -Fxq "$f" folders_list.txt; then
         printf "Folder to remove -- %s \n" ${f} 
@@ -41,7 +41,9 @@ for f in *; do
         printf "Folder to Keep -- %s \n" ${f}
     fi
 done
+
 # apply it
+# use */ to get the folder 
 for f in *; do
     if ! grep -Fxq "$f" folders_list.txt; then
         rm -r "$f" 
