@@ -29,3 +29,32 @@ done
 
 ```
 
+
+## remove folder that in/not in a list 
+```
+# print it
+for f in *; do
+    if ! grep -Fxq "$f" folders_list.txt; then
+        printf "Folder to remove -- %s \n" ${f} 
+    else
+        printf "Folder to Keep -- %s \n" ${f}
+    fi
+done
+# apply it
+for f in *; do
+    if ! grep -Fxq "$f" folders_list.txt; then
+        rm -r "$f" 
+    else
+        printf "Folder to Keep -- %s \n" ${f}
+    fi
+
+
+```
+
+
+
+[ref](https://stackoverflow.com/questions/61845449/delete-files-and-folders-in-a-directory-which-dont-match-a-text-list)
+
+
+
+
