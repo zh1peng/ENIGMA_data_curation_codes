@@ -81,3 +81,70 @@ done
 
 
 
+
+
+## remove all folders
+```
+rm -R -- */
+```
+
+## unzip files
+```
+_start=0
+for file_i in *.tar.gz; do
+((_start=_start+1))
+echo ${_start} ${file_i}
+tar -zxf ${file_i} ${file_i%%_*}/T1_3DAXIAL/Dicoms
+done
+```
+> s='/some/random/file.csv:some string'
+> echo "${s%%:*}"
+/some/random/file.csv
+
+#use z for gz file
+#also can use pipe|
+`gunzip -c foo.tar.gz | tar xopft -`
+
+## dcm2niix batch 
+```
+sufix='_T1w'
+prefix='sub-'
+_start=0
+for subj_id in $(ls -d */); do
+((_start=_start+1))
+echo ${_start} ${subj_id}
+out=$prefix${subj_id%%/}$sufix
+#dcm2niix  -f $out -o /Volumes/Groups/Psychiatry/General/NERVELAB/ENIGMA/BIDS/COH106/sourcedata/all_T1 /Volumes/Groups/Psychiatry/General/NERVELAB/ENIGMA/BIDS/COH106/sourcedata/Study_version2/${subj_id}/T1_3DAXIAL
+done
+```
+
+
+## loop with start index
+how to use seq: add `$seq(start end)`
+how to get the length of array: `${#array[@]}`
+** when use this approach, it is important to not that the index start with 0!!!! **
+how to get all index for array `${!array[@]}`
+how to use seq: `$seq(start, end)`
+how to remove end '/': `%%/`
+```
+sufix='_T1w'
+prefix='sub-'
+start=518
+subid_array=($(ls -d */))
+for subi in $(seq $start ${#subid_array[@]}); do
+subj_id=${subid_array[$subi-1]} #idx start with 0
+echo $subi $subj_id
+out=$prefix${subj_id%%/}$sufix
+dcm2niix  -f $out -o /Volumes/Groups/Psychiatry/General/NERVELAB/ENIGMA/BIDS/COH106/sourcedata/all_T1 /Volumes/Groups/Psychiatry/General/NERVELAB/ENIGMA/BIDS/COH106/sourcedata/Study_version2/${subj_id}/T1_3DAXIAL
+done
+```
+
+## show folder structure and save to file
+```
+tree -d -C -H ./ > result.html
+```
+
+
+
+
+
