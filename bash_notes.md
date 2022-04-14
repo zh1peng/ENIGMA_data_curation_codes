@@ -100,7 +100,7 @@ done
 
 > echo "${s%%:*}"
 
-/some/random/file.csv
+> /some/random/file.csv
 
 
 #use z for gz file
@@ -128,7 +128,7 @@ how to use seq: add `$seq(start end)`
 
 how to get the length of array: `${#array[@]}`
 
-** when use this approach, it is important to not that the index start with 0!!!! **
+> when use this approach, it is important to not that the index start with 0!!!!
 
 how to get all index for array `${!array[@]}`
 
