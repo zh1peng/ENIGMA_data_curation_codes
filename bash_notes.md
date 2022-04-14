@@ -81,8 +81,6 @@ done
 
 
 
-
-
 ## remove all folders
 ```
 rm -R -- */
@@ -97,11 +95,16 @@ echo ${_start} ${file_i}
 tar -zxf ${file_i} ${file_i%%_*}/T1_3DAXIAL/Dicoms
 done
 ```
+
 > s='/some/random/file.csv:some string'
+
 > echo "${s%%:*}"
+
 /some/random/file.csv
 
+
 #use z for gz file
+
 #also can use pipe|
 `gunzip -c foo.tar.gz | tar xopft -`
 
@@ -120,11 +123,17 @@ done
 
 
 ## loop with start index
+
 how to use seq: add `$seq(start end)`
+
 how to get the length of array: `${#array[@]}`
+
 ** when use this approach, it is important to not that the index start with 0!!!! **
+
 how to get all index for array `${!array[@]}`
+
 how to use seq: `$seq(start, end)`
+
 how to remove end '/': `%%/`
 ```
 sufix='_T1w'
