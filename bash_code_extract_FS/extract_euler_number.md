@@ -39,10 +39,11 @@ done
 
 Final version 
 allows to specify 
-* 1) BIDS_dir
-* 2) study_code
-* 3) search pattern
-and saves the output into {study_code}_FS_QC folder as {study_code}_Euler_Number.csv
+* 1 BIDS_dir
+* 2 study_code
+* 3 search pattern
+
+saves the output into {study_code}_FS_QC folder as {study_code}_Euler_Number.csv
 ```
 # $1 -> BIDS_dir
 # $2 -> study_code e.g., ALC125
