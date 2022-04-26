@@ -32,3 +32,9 @@ fs_qc_folder=$study_code"_FS_QC"
 printf "CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv to %s \n" "$fs_qc_folder" 
 mv $study_dir/CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv $study_dir'/'$fs_qc_folder'/'$study_code"_CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv"
 ```
+
+Important notes:
+* In the for loop no need to add `,` 
+* When creating ROI name, do not replace "L_" or "R_" with "". Some ROI name will be changed.
+* In Excel, use '=Textjoin(", ", 1, A1:A75)' to join string with ", "
+* In Excel, use 'RIGHT(A16,LEN(A16)-2)' to remove prefix
