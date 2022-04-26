@@ -1,246 +1,35 @@
-Freesufer Destrieux labels
+Extract Destrieux CT data
 ```
-# Below is the color table for the cortical labels of the seg volume
-# created by mri_aparc2aseg (with --a2009s flag) in which the aseg
-# cortex label is replaced by the labels in the aparc.a2009s. The
-# cortical labels are the same as in Simple_surface_labels2009.txt,
-# except that left hemisphere has 11100 added to the index and the
-# right has 12100 added.  The label names are also prepended with
-# ctx_lh_, ctx_rh_, wm_lh_ and wm_rh_ (note usage of _ instead of -
-# to differentiate from a2005s labels).
+# $1 -> BIDS_dir
+# $2 -> study_code e.g., ALC125
+# $3 -> search pattern, e.g., "sub-"
+# example: ./euler_test.sh /z/Groups/Psychiatry/General/NERVELAB/ENIGMA/BIDS ALC125 sub-
 
-#No.   Label Name:                              R   G   B   A
-11100  ctx_lh_Unknown                           0   0   0   0
-11101  ctx_lh_G_and_S_frontomargin             23 220  60   0
-11102  ctx_lh_G_and_S_occipital_inf            23  60 180   0
-11103  ctx_lh_G_and_S_paracentral              63 100  60   0
-11104  ctx_lh_G_and_S_subcentral               63  20 220   0
-11105  ctx_lh_G_and_S_transv_frontopol         13   0 250   0
-11106  ctx_lh_G_and_S_cingul-Ant               26  60   0   0
-11107  ctx_lh_G_and_S_cingul-Mid-Ant           26  60  75   0
-11108  ctx_lh_G_and_S_cingul-Mid-Post          26  60 150   0
-11109  ctx_lh_G_cingul-Post-dorsal             25  60 250   0
-11110  ctx_lh_G_cingul-Post-ventral            60  25  25   0
-11111  ctx_lh_G_cuneus                        180  20  20   0
-11112  ctx_lh_G_front_inf-Opercular           220  20 100   0
-11113  ctx_lh_G_front_inf-Orbital             140  60  60   0
-11114  ctx_lh_G_front_inf-Triangul            180 220 140   0
-11115  ctx_lh_G_front_middle                  140 100 180   0
-11116  ctx_lh_G_front_sup                     180  20 140   0
-11117  ctx_lh_G_Ins_lg_and_S_cent_ins          23  10  10   0
-11118  ctx_lh_G_insular_short                 225 140 140   0
-11119  ctx_lh_G_occipital_middle              180  60 180   0
-11120  ctx_lh_G_occipital_sup                  20 220  60   0
-11121  ctx_lh_G_oc-temp_lat-fusifor            60  20 140   0
-11122  ctx_lh_G_oc-temp_med-Lingual           220 180 140   0
-11123  ctx_lh_G_oc-temp_med-Parahip            65 100  20   0
-11124  ctx_lh_G_orbital                       220  60  20   0
-11125  ctx_lh_G_pariet_inf-Angular             20  60 220   0
-11126  ctx_lh_G_pariet_inf-Supramar           100 100  60   0
-11127  ctx_lh_G_parietal_sup                  220 180 220   0
-11128  ctx_lh_G_postcentral                    20 180 140   0
-11129  ctx_lh_G_precentral                     60 140 180   0
-11130  ctx_lh_G_precuneus                      25  20 140   0
-11131  ctx_lh_G_rectus                         20  60 100   0
-11132  ctx_lh_G_subcallosal                    60 220  20   0
-11133  ctx_lh_G_temp_sup-G_T_transv            60  60 220   0
-11134  ctx_lh_G_temp_sup-Lateral              220  60 220   0
-11135  ctx_lh_G_temp_sup-Plan_polar            65 220  60   0
-11136  ctx_lh_G_temp_sup-Plan_tempo            25 140  20   0
-11137  ctx_lh_G_temporal_inf                  220 220 100   0
-11138  ctx_lh_G_temporal_middle               180  60  60   0
-11139  ctx_lh_Lat_Fis-ant-Horizont             61  20 220   0
-11140  ctx_lh_Lat_Fis-ant-Vertical             61  20  60   0
-11141  ctx_lh_Lat_Fis-post                     61  60 100   0
-11142  ctx_lh_Medial_wall                      25  25  25   0
-11143  ctx_lh_Pole_occipital                  140  20  60   0
-11144  ctx_lh_Pole_temporal                   220 180  20   0
-11145  ctx_lh_S_calcarine                      63 180 180   0
-11146  ctx_lh_S_central                       221  20  10   0
-11147  ctx_lh_S_cingul-Marginalis             221  20 100   0
-11148  ctx_lh_S_circular_insula_ant           221  60 140   0
-11149  ctx_lh_S_circular_insula_inf           221  20 220   0
-11150  ctx_lh_S_circular_insula_sup            61 220 220   0
-11151  ctx_lh_S_collat_transv_ant             100 200 200   0
-11152  ctx_lh_S_collat_transv_post             10 200 200   0
-11153  ctx_lh_S_front_inf                     221 220  20   0
-11154  ctx_lh_S_front_middle                  141  20 100   0
-11155  ctx_lh_S_front_sup                      61 220 100   0
-11156  ctx_lh_S_interm_prim-Jensen            141  60  20   0
-11157  ctx_lh_S_intrapariet_and_P_trans       143  20 220   0
-11158  ctx_lh_S_oc_middle_and_Lunatus         101  60 220   0
-11159  ctx_lh_S_oc_sup_and_transversal         21  20 140   0
-11160  ctx_lh_S_occipital_ant                  61  20 180   0
-11161  ctx_lh_S_oc-temp_lat                   221 140  20   0
-11162  ctx_lh_S_oc-temp_med_and_Lingual       141 100 220   0
-11163  ctx_lh_S_orbital_lateral               221 100  20   0
-11164  ctx_lh_S_orbital_med-olfact            181 200  20   0
-11165  ctx_lh_S_orbital-H_Shaped              101  20  20   0
-11166  ctx_lh_S_parieto_occipital             101 100 180   0
-11167  ctx_lh_S_pericallosal                  181 220  20   0
-11168  ctx_lh_S_postcentral                    21 140 200   0
-11169  ctx_lh_S_precentral-inf-part            21  20 240   0
-11170  ctx_lh_S_precentral-sup-part            21  20 200   0
-11171  ctx_lh_S_suborbital                     21  20  60   0
-11172  ctx_lh_S_subparietal                   101  60  60   0
-11173  ctx_lh_S_temporal_inf                   21 180 180   0
-11174  ctx_lh_S_temporal_sup                  223 220  60   0
-11175  ctx_lh_S_temporal_transverse           221  60  60   0
+printf "BIDS dir is: %s\n" "$1"
+printf "Extracting Euler Number for %s with search string: %s\n" "$2" "$3"
 
-12100  ctx_rh_Unknown                           0   0   0   0
-12101  ctx_rh_G_and_S_frontomargin             23 220  60   0
-12102  ctx_rh_G_and_S_occipital_inf            23  60 180   0
-12103  ctx_rh_G_and_S_paracentral              63 100  60   0
-12104  ctx_rh_G_and_S_subcentral               63  20 220   0
-12105  ctx_rh_G_and_S_transv_frontopol         13   0 250   0
-12106  ctx_rh_G_and_S_cingul-Ant               26  60   0   0
-12107  ctx_rh_G_and_S_cingul-Mid-Ant           26  60  75   0
-12108  ctx_rh_G_and_S_cingul-Mid-Post          26  60 150   0
-12109  ctx_rh_G_cingul-Post-dorsal             25  60 250   0
-12110  ctx_rh_G_cingul-Post-ventral            60  25  25   0
-12111  ctx_rh_G_cuneus                        180  20  20   0
-12112  ctx_rh_G_front_inf-Opercular           220  20 100   0
-12113  ctx_rh_G_front_inf-Orbital             140  60  60   0
-12114  ctx_rh_G_front_inf-Triangul            180 220 140   0
-12115  ctx_rh_G_front_middle                  140 100 180   0
-12116  ctx_rh_G_front_sup                     180  20 140   0
-12117  ctx_rh_G_Ins_lg_and_S_cent_ins          23  10  10   0
-12118  ctx_rh_G_insular_short                 225 140 140   0
-12119  ctx_rh_G_occipital_middle              180  60 180   0
-12120  ctx_rh_G_occipital_sup                  20 220  60   0
-12121  ctx_rh_G_oc-temp_lat-fusifor            60  20 140   0
-12122  ctx_rh_G_oc-temp_med-Lingual           220 180 140   0
-12123  ctx_rh_G_oc-temp_med-Parahip            65 100  20   0
-12124  ctx_rh_G_orbital                       220  60  20   0
-12125  ctx_rh_G_pariet_inf-Angular             20  60 220   0
-12126  ctx_rh_G_pariet_inf-Supramar           100 100  60   0
-12127  ctx_rh_G_parietal_sup                  220 180 220   0
-12128  ctx_rh_G_postcentral                    20 180 140   0
-12129  ctx_rh_G_precentral                     60 140 180   0
-12130  ctx_rh_G_precuneus                      25  20 140   0
-12131  ctx_rh_G_rectus                         20  60 100   0
-12132  ctx_rh_G_subcallosal                    60 220  20   0
-12133  ctx_rh_G_temp_sup-G_T_transv            60  60 220   0
-12134  ctx_rh_G_temp_sup-Lateral              220  60 220   0
-12135  ctx_rh_G_temp_sup-Plan_polar            65 220  60   0
-12136  ctx_rh_G_temp_sup-Plan_tempo            25 140  20   0
-12137  ctx_rh_G_temporal_inf                  220 220 100   0
-12138  ctx_rh_G_temporal_middle               180  60  60   0
-12139  ctx_rh_Lat_Fis-ant-Horizont             61  20 220   0
-12140  ctx_rh_Lat_Fis-ant-Vertical             61  20  60   0
-12141  ctx_rh_Lat_Fis-post                     61  60 100   0
-12142  ctx_rh_Medial_wall                      25  25  25   0
-12143  ctx_rh_Pole_occipital                  140  20  60   0
-12144  ctx_rh_Pole_temporal                   220 180  20   0
-12145  ctx_rh_S_calcarine                      63 180 180   0
-12146  ctx_rh_S_central                       221  20  10   0
-12147  ctx_rh_S_cingul-Marginalis             221  20 100   0
-12148  ctx_rh_S_circular_insula_ant           221  60 140   0
-12149  ctx_rh_S_circular_insula_inf           221  20 220   0
-12150  ctx_rh_S_circular_insula_sup            61 220 220   0
-12151  ctx_rh_S_collat_transv_ant             100 200 200   0
-12152  ctx_rh_S_collat_transv_post             10 200 200   0
-12153  ctx_rh_S_front_inf                     221 220  20   0
-12154  ctx_rh_S_front_middle                  141  20 100   0
-12155  ctx_rh_S_front_sup                      61 220 100   0
-12156  ctx_rh_S_interm_prim-Jensen            141  60  20   0
-12157  ctx_rh_S_intrapariet_and_P_trans       143  20 220   0
-12158  ctx_rh_S_oc_middle_and_Lunatus         101  60 220   0
-12159  ctx_rh_S_oc_sup_and_transversal         21  20 140   0
-12160  ctx_rh_S_occipital_ant                  61  20 180   0
-12161  ctx_rh_S_oc-temp_lat                   221 140  20   0
-12162  ctx_rh_S_oc-temp_med_and_Lingual       141 100 220   0
-12163  ctx_rh_S_orbital_lateral               221 100  20   0
-12164  ctx_rh_S_orbital_med-olfact            181 200  20   0
-12165  ctx_rh_S_orbital-H_Shaped              101  20  20   0
-12166  ctx_rh_S_parieto_occipital             101 100 180   0
-12167  ctx_rh_S_pericallosal                  181 220  20   0
-12168  ctx_rh_S_postcentral                    21 140 200   0
-12169  ctx_rh_S_precentral-inf-part            21  20 240   0
-12170  ctx_rh_S_precentral-sup-part            21  20 200   0
-12171  ctx_rh_S_suborbital                     21  20  60   0
-12172  ctx_rh_S_subparietal                   101  60  60   0
-12173  ctx_rh_S_temporal_inf                   21 180 180   0
-12174  ctx_rh_S_temporal_sup                  223 220  60   0
-12175  ctx_rh_S_temporal_transverse           221  60  60   0
-```
+BIDS_dir=$1
+study_code=$2
+fs_dir='/derivatives/freesurfer/'
 
-Short label
-```
-11100	Unknown
-11101	G_and_S_frontomargin
-11102	G_and_S_occipital_inf
-11103	G_and_S_paracentral
-11104	G_and_S_subcentral
-11105	G_and_S_transv_frontopol
-11106	G_and_S_cingul-Ant
-11107	G_and_S_cingul-Mid-Ant
-11108	G_and_S_cingul-Mid-Post
-11109	G_cingul-Post-dorsal
-11110	G_cingul-Post-ventral
-11111	G_cuneus
-11112	G_front_inf-Opercular
-11113	G_front_inf-Orbital
-11114	G_front_inf-Triangul
-11115	G_front_middle
-11116	G_front_sup
-11117	G_Ins_lg_and_S_cent_ins
-11118	G_insular_short
-11119	G_occipital_middle
-11120	G_occipital_sup
-11121	G_oc-temp_lat-fusifor
-11122	G_oc-temp_med-Lingual
-11123	G_oc-temp_med-Parahip
-11124	G_orbital
-11125	G_pariet_inf-Angular
-11126	G_pariet_inf-Supramar
-11127	G_parietal_sup
-11128	G_postcentral
-11129	G_precentral
-11130	G_precuneus
-11131	G_rectus
-11132	G_subcallosal
-11133	G_temp_sup-G_T_transv
-11134	G_temp_sup-Lateral
-11135	G_temp_sup-Plan_polar
-11136	G_temp_sup-Plan_tempo
-11137	G_temporal_inf
-11138	G_temporal_middle
-11139	Lat_Fis-ant-Horizont
-11140	Lat_Fis-ant-Vertical
-11141	Lat_Fis-post
-11142	Medial_wall
-11143	Pole_occipital
-11144	Pole_temporal
-11145	S_calcarine
-11146	S_central
-11147	S_cingul-Marginalis
-11148	S_circular_insula_ant
-11149	S_circular_insula_inf
-11150	S_circular_insula_sup
-11151	S_collat_transv_ant
-11152	S_collat_transv_post
-11153	S_front_inf
-11154	S_front_middle
-11155	S_front_sup
-11156	S_interm_prim-Jensen
-11157	S_intrapariet_and_P_trans
-11158	S_oc_middle_and_Lunatus
-11159	S_oc_sup_and_transversal
-11160	S_occipital_ant
-11161	S_oc-temp_lat
-11162	S_oc-temp_med_and_Lingual
-11163	S_orbital_lateral
-11164	S_orbital_med-olfact
-11165	S_orbital-H_Shaped
-11166	S_parieto_occipital
-11167	S_pericallosal
-11168	S_postcentral
-11169	S_precentral-inf-part
-11170	S_precentral-sup-part
-11171	S_suborbital
-11172	S_subparietal
-11173	S_temporal_inf
-11174	S_temporal_sup
-11175	S_temporal_transverse
+
+study_dir=$BIDS_dir'/'$study_code$fs_dir
+cd $study_dir
+
+echo 'SubjID, L_G_and_S_frontomargin_thickavg, L_G_and_S_occipital_inf_thickavg, L_G_and_S_paracentral_thickavg, L_G_and_S_subcentral_thickavg, L_G_and_S_transv_frontopol_thickavg, L_G_and_S_cingul-Ant_thickavg, L_G_and_S_cingul-Mid-Ant_thickavg, L_G_and_S_cingul-Mid-Post_thickavg, L_G_cingul-Post-dorsal_thickavg, L_G_cingul-Post-ventral_thickavg, L_G_cuneus_thickavg, L_G_front_inf-Opercular_thickavg, L_G_front_inf-Orbital_thickavg, L_G_front_inf-Triangul_thickavg, L_G_front_middle_thickavg, L_G_front_sup_thickavg, L_G_Ins_lg_and_S_cent_ins_thickavg, L_G_insular_short_thickavg, L_G_occipital_middle_thickavg, L_G_occipital_sup_thickavg, L_G_oc-temp_lat-fusifor_thickavg, L_G_oc-temp_med-Lingual_thickavg, L_G_oc-temp_med-Parahip_thickavg, L_G_orbital_thickavg, L_G_pariet_inf-Angular_thickavg, L_G_pariet_inf-Supramar_thickavg, L_G_parietal_sup_thickavg, L_G_postcentral_thickavg, L_G_precentral_thickavg, L_G_precuneus_thickavg, L_G_rectus_thickavg, L_G_subcallosal_thickavg, L_G_temp_sup-G_T_transv_thickavg, L_G_temp_sup-Lateral_thickavg, L_G_temp_sup-Plan_polar_thickavg, L_G_temp_sup-Plan_tempo_thickavg, L_G_temporal_inf_thickavg, L_G_temporal_middle_thickavg, L_Lat_Fis-ant-Horizont_thickavg, L_Lat_Fis-ant-Vertical_thickavg, L_Lat_Fis-post_thickavg, L_Medial_wall_thickavg, L_Pole_occipital_thickavg, L_Pole_temporal_thickavg, L_S_calcarine_thickavg, L_S_central_thickavg, L_S_cingul-Marginalis_thickavg, L_S_circular_insula_ant_thickavg, L_S_circular_insula_inf_thickavg, L_S_circular_insula_sup_thickavg, L_S_collat_transv_ant_thickavg, L_S_collat_transv_post_thickavg, L_S_front_inf_thickavg, L_S_front_middle_thickavg, L_S_front_sup_thickavg, L_S_interm_prim-Jensen_thickavg, L_S_intrapariet_and_P_trans_thickavg, L_S_oc_middle_and_Lunatus_thickavg, L_S_oc_sup_and_transversal_thickavg, L_S_occipital_ant_thickavg, L_S_oc-temp_lat_thickavg, L_S_oc-temp_med_and_Lingual_thickavg, L_S_orbital_lateral_thickavg, L_S_orbital_med-olfact_thickavg, L_S_orbital-H_Shaped_thickavg, L_S_parieto_occipital_thickavg, L_S_pericallosal_thickavg, L_S_postcentral_thickavg, L_S_precentral-inf-part_thickavg, L_S_precentral-sup-part_thickavg, L_S_suborbital_thickavg, L_S_subparietal_thickavg, L_S_temporal_inf_thickavg, L_S_temporal_sup_thickavg, L_S_temporal_transverse_thickavg, R_G_and_S_frontomargin_thickavg, R_G_and_S_occipital_inf_thickavg, R_G_and_S_paracentral_thickavg, R_G_and_S_subcentral_thickavg, R_G_and_S_transv_frontopol_thickavg, R_G_and_S_cingul-Ant_thickavg, R_G_and_S_cingul-Mid-Ant_thickavg, R_G_and_S_cingul-Mid-Post_thickavg, R_G_cingul-Post-dorsal_thickavg, R_G_cingul-Post-ventral_thickavg, R_G_cuneus_thickavg, R_G_front_inf-Opercular_thickavg, R_G_front_inf-Orbital_thickavg, R_G_front_inf-Triangul_thickavg, R_G_front_middle_thickavg, R_G_front_sup_thickavg, R_G_Ins_lg_and_S_cent_ins_thickavg, R_G_insular_short_thickavg, R_G_occipital_middle_thickavg, R_G_occipital_sup_thickavg, R_G_oc-temp_lat-fusifor_thickavg, R_G_oc-temp_med-Lingual_thickavg, R_G_oc-temp_med-Parahip_thickavg, R_G_orbital_thickavg, R_G_pariet_inf-Angular_thickavg, R_G_pariet_inf-Supramar_thickavg, R_G_parietal_sup_thickavg, R_G_postcentral_thickavg, R_G_precentral_thickavg, R_G_precuneus_thickavg, R_G_rectus_thickavg, R_G_subcallosal_thickavg, R_G_temp_sup-G_T_transv_thickavg, R_G_temp_sup-Lateral_thickavg, R_G_temp_sup-Plan_polar_thickavg, R_G_temp_sup-Plan_tempo_thickavg, R_G_temporal_inf_thickavg, R_G_temporal_middle_thickavg, R_Lat_Fis-ant-Horizont_thickavg, R_Lat_Fis-ant-Vertical_thickavg, R_Lat_Fis-post_thickavg, R_Medial_wall_thickavg, R_Pole_occipital_thickavg, R_Pole_temporal_thickavg, R_S_calcarine_thickavg, R_S_central_thickavg, R_S_cingul-Marginalis_thickavg, R_S_circular_insula_ant_thickavg, R_S_circular_insula_inf_thickavg, R_S_circular_insula_sup_thickavg, R_S_collat_transv_ant_thickavg, R_S_collat_transv_post_thickavg, R_S_front_inf_thickavg, R_S_front_middle_thickavg, R_S_front_sup_thickavg, R_S_interm_prim-Jensen_thickavg, R_S_intrapariet_and_P_trans_thickavg, R_S_oc_middle_and_Lunatus_thickavg, R_S_oc_sup_and_transversal_thickavg, R_S_occipital_ant_thickavg, R_S_oc-temp_lat_thickavg, R_S_oc-temp_med_and_Lingual_thickavg, R_S_orbital_lateral_thickavg, R_S_orbital_med-olfact_thickavg, R_S_orbital-H_Shaped_thickavg, R_S_parieto_occipital_thickavg, R_S_pericallosal_thickavg, R_S_postcentral_thickavg, R_S_precentral-inf-part_thickavg, R_S_precentral-sup-part_thickavg, R_S_suborbital_thickavg, R_S_subparietal_thickavg, R_S_temporal_inf_thickavg, R_S_temporal_sup_thickavg, R_S_temporal_transverse_thickavg' >CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv
+
+for subj_id in $(ls -d "$3"*/); do
+printf "%s,"  "${subj_id%%//}" >> CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv
+for side in lh.aparc.a2009s.stats rh.aparc.a2009s.stats; do
+for x in G_and_S_frontomargin, G_and_S_occipitainf, G_and_S_paracentral, G_and_S_subcentral, G_and_S_transv_frontopol, G_and_S_cingul-Ant, G_and_S_cingul-Mid-Ant, G_and_S_cingul-Mid-Post, G_cingul-Post-dorsal, G_cingul-Post-ventral, G_cuneus, G_front_inf-Opercular, G_front_inf-Orbital, G_front_inf-Triangul, G_front_middle, G_front_sup, G_Ins_lg_and_S_cent_ins, G_insular_short, G_occipitamiddle, G_occipitasup, G_oc-temp_lat-fusifor, G_oc-temp_med-Lingual, G_oc-temp_med-Parahip, G_orbital, G_pariet_inf-Angular, G_pariet_inf-Supramar, G_parietasup, G_postcentral, G_precentral, G_precuneus, G_rectus, G_subcallosal, G_temp_sup-G_T_transv, G_temp_sup-Lateral, G_temp_sup-Plan_polar, G_temp_sup-Plan_tempo, G_temporainf, G_temporamiddle, Lat_Fis-ant-Horizont, Lat_Fis-ant-Vertical, Lat_Fis-post, Mediawall, Pole_occipital, Pole_temporal, S_calcarine, S_central, S_cingul-Marginalis, S_circular_insula_ant, S_circular_insula_inf, S_circular_insula_sup, S_collat_transv_ant, S_collat_transv_post, S_front_inf, S_front_middle, S_front_sup, S_interm_prim-Jensen, S_intrapariet_and_P_trans, S_oc_middle_and_Lunatus, S_oc_sup_and_transversal, S_occipitaant, S_oc-temp_lat, S_oc-temp_med_and_Lingual, S_orbitalateral, S_orbitamed-olfact, S_orbital-H_Shaped, S_parieto_occipital, S_pericallosal, S_postcentral, S_precentral-inf-part, S_precentral-sup-part, S_suborbital, S_subparietal, S_temporainf, S_temporasup, S_temporatransverse; do
+
+printf "%g," `grep -w ${x} ${subj_id}/stats/${side} | awk '{print $5}'` >> CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv
+
+done
+done
+echo "" >> CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv
+done
+fs_qc_folder=$study_code"_FS_QC"
+printf "CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv to %s \n" "$fs_qc_folder" 
+mv $study_dir/Euler_number.csv $study_dir'/'$fs_qc_folder'/'$study_code"_CorticalMeasuresENIGMA_Destrieux_ThickAvg.csv"
 ```
