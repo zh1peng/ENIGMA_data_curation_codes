@@ -1,3 +1,5 @@
+Single subject, assuming you are in the stat/ folder
+```
 echo 'SubjID,L_SurfaceHoles, L_Euler, R_SurfaceHoles, R_Euler, Total_SurfaceHoles, Total_Euler'>Euler_number.csv
 printf "%s,"  "sub001" >> Euler_number.csv
 for x in lhSurfaceHoles, rhSurfaceHoles, "Total number of"; do
@@ -10,3 +12,4 @@ let g=$hole euler=2-2*g # 2-2g
 printf "%s," "$hole" >>Euler_number.csv
 printf "%s," "$euler" >>Euler_number.csv
 done
+```
