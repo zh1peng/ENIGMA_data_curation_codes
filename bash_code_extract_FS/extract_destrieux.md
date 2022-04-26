@@ -3,10 +3,10 @@ Extract Destrieux CT data
 # $1 -> BIDS_dir
 # $2 -> study_code e.g., ALC125
 # $3 -> search pattern, e.g., "sub-"
-# example: ./euler_test.sh /z/Groups/Psychiatry/General/NERVELAB/ENIGMA/BIDS ALC125 sub-
+# example: ./Destrieux_test.sh /z/Groups/Psychiatry/General/NERVELAB/ENIGMA/BIDS ALC125 sub-
 
 printf "BIDS dir is: %s\n" "$1"
-printf "Extracting Euler Number for %s with search string: %s\n" "$2" "$3"
+printf "Extracting Destrieux data for %s with search string: %s\n" "$2" "$3"
 
 BIDS_dir=$1
 study_code=$2
