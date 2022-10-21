@@ -153,7 +153,14 @@ done
 tree -d -C -H ./ > result.html
 ```
 
-
+### how to copy folders with centain patterns to new directory 
+#### e.g., session 1 participants
+```
+for d in **/*ses-1*/
+do 
+cp -r $d dest_path
+done
+```
 
 
 
