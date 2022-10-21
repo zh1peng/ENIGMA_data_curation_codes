@@ -155,6 +155,7 @@ tree -d -C -H ./ > result.html
 
 ### how to copy folders with centain patterns to new directory 
 #### e.g., session 1 participants
+sometimes it may need to use `**/*ses-1*` other wise only contents of the folder instead of the parent folder are copied
 ```
 for d in **/*ses-1*/
 do 
